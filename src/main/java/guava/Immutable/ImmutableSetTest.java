@@ -1,8 +1,9 @@
-package guava;
+package guava.Immutable;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.UnmodifiableIterator;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,9 +19,8 @@ public class ImmutableSetTest {
         set.add(2);
         set.add(3);
         set.add(4);
-        ImmutableSet immutableSet = ImmutableSet.builder().addAll(set).build();
-
-        iterator();
+//        ImmutableSet immutableSet = ImmutableSet.builder().addAll(set).build();
+        isValue();
     }
 
     private static void builder() {
@@ -45,6 +45,10 @@ public class ImmutableSetTest {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+    }
 
+    private static void isValue() {
+        ImmutableSet immutableSet = ImmutableSet.of(1, 2, 3, 44, 5, 6);
+        System.out.println(immutableSet.containsAll(Arrays.asList(1, 2, 3)));
     }
 }
